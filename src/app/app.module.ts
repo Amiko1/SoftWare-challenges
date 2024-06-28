@@ -11,13 +11,19 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
+import { FilmsPresentationComponent } from './films-presentation/films-presentation.component';
+import { provideHttpClient } from '@angular/common/http';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
 ];
 
 @NgModule({
-  declarations: [AppComponent, JobExperienceFormComponent],
+  declarations: [
+    AppComponent,
+    JobExperienceFormComponent,
+    FilmsPresentationComponent,
+  ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
@@ -29,7 +35,7 @@ const routes: Routes = [
     MatNativeDateModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [provideHttpClient()],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
