@@ -9,10 +9,11 @@ import { Observable } from 'rxjs';
 })
 export class FilmsPresentationComponent {
   films$!: Observable<unknown>;
+  title = '';
 
   constructor(private filmPresentationService: FilmPresentationService) {}
 
   ngOnInit(): void {
-    this.films$ = this.filmPresentationService.getFilms();
+    this.films$ = this.filmPresentationService.getFilms({ title: this.title });
   }
 }

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -8,11 +8,14 @@ import { Observable } from 'rxjs';
 export class FilmPresentationService {
   constructor(private httpClient: HttpClient) {}
 
-  getFilms(): Observable<unknown> {
-    const url = `https://online-movie-
-database.p.rapidapi.com/title/v2/find?title=starwars&amp;limit=20&amp;paginationKey=0&amp;sortArg=
-moviemeter%2Casc`;
+  getFilms({ title }: { title: string }): Observable<unknown> {
+    const url = `https://online-movie-database.p.rapidapi.com/title/v2/find`;
 
-    return this.httpClient.get<unknown>(url);
+    const params = new HttpParams()
+      .set('title', title)
+      .set('limit', '20')
+      .set('sortArg', 'moviemeter,asc');
+
+    return this.httpClient.get<unknown>(url, { params });
   }
 }
