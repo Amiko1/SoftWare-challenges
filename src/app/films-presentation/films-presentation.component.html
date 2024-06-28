@@ -1,1 +1,48 @@
-<p>films-presentation works!</p>
+<div class="fields">
+  <mat-form-field class="example-full-width">
+    <mat-label>Title</mat-label>
+    <input [(ngModel)]="title" matInput />
+  </mat-form-field>
+
+  <button (click)="searchFilms()" mat-flat-button color="primary">
+    Search
+  </button>
+</div>
+
+<div class="container">
+  <div *ngIf="films$ | async as films; else loading">
+    <div *ngFor="let edge of films.data.mainSearch.edges">
+      <mat-card class="margin-top">
+        <div class="flex">
+          <img
+            class="card-img"
+            mat-card-image
+            [src]="edge.node.entity.primaryImage.url"
+            alt="{{ edge.node.entity.titleText.text }}"
+          />
+          <div>
+            <mat-card-header>
+              <mat-card-title>{{
+                edge.node.entity.titleText.text
+              }}</mat-card-title>
+              <mat-card-subtitle>{{
+                edge.node.entity.releaseYear.year
+              }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+              <p>
+                Release Date: {{ edge.node.entity.releaseDate.day }}/{{
+                  edge.node.entity.releaseDate.month
+                }}/{{ edge.node.entity.releaseDate.year }}
+              </p>
+            </mat-card-content>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+  </div>
+  <ng-template #loading>
+    <p>Loading films...</p>
+  </ng-template>
+</div>

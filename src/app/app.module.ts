@@ -8,6 +8,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule, Routes } from '@angular/router';
+import { MatCardModule } from '@angular/material/card';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 import { AppComponent } from './app.component';
 import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
@@ -34,10 +36,12 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
     MatSelectModule,
+    MatCardModule,
     MatDatepickerModule,
     MatNativeDateModule,
     RouterModule.forRoot(routes),

@@ -1,10 +1,27 @@
 .container {
   display: flex;
-  height: 100%;
+  padding: 16px;
+  gap: 10px;
   justify-content: center;
-  align-items: center;
 }
 
 .margin-top {
   margin-top: 32px;
+}
+
+.card-img {
+  width: 20%;
+  height: 200px;
+}
+
+.fields {
+  margin-top: 16px;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  display: flex;
 }

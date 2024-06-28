@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FilmPresentationService } from '../services/film-presentation.service';
 import { Observable } from 'rxjs';
+import { Film } from '../@types/film-types';
 
 @Component({
   selector: 'app-films-presentation',
@@ -8,15 +9,16 @@ import { Observable } from 'rxjs';
   styleUrl: './films-presentation.component.css',
 })
 export class FilmsPresentationComponent {
-  films$!: Observable<unknown>;
-  title = '';
+  films$!: Observable<Film>;
+  title = 'starwars';
 
   constructor(private filmPresentationService: FilmPresentationService) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.searchFilms();
+  }
+
+  searchFilms(): void {
     this.films$ = this.filmPresentationService.getFilms({ title: this.title });
-    this.filmPresentationService
-      .getFilms({ title: 'starwars' })
-      .subscribe((data) => console.log(data));
   }
 }
