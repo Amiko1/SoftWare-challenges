@@ -9,12 +9,9 @@ export class FilmPresentationService {
   constructor(private httpClient: HttpClient) {}
 
   getFilms({ title }: { title: string }): Observable<unknown> {
-    const url = `https://online-movie-database.p.rapidapi.com/title/v2/find`;
+    const url = 'https://online-movie-database.p.rapidapi.com/v2/search';
 
-    const params = new HttpParams()
-      .set('title', title)
-      .set('limit', '20')
-      .set('sortArg', 'moviemeter,asc');
+    const params = new HttpParams().set('searchTerm', title).set('first', '20');
 
     return this.httpClient.get<unknown>(url, { params });
   }

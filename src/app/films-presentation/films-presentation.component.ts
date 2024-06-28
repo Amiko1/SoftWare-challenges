@@ -15,5 +15,8 @@ export class FilmsPresentationComponent {
 
   ngOnInit(): void {
     this.films$ = this.filmPresentationService.getFilms({ title: this.title });
+    this.filmPresentationService
+      .getFilms({ title: 'starwars' })
+      .subscribe((data) => console.log(data));
   }
 }

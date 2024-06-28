@@ -5,7 +5,7 @@ export function configInterceptor(
   req: HttpRequest<unknown>,
   next: HttpHandlerFn
 ): Observable<HttpEvent<unknown>> {
-  const key = '4746a79472mshb4e32011cd91405p1d5108jsn8eddc658a3e7';
+  const key = '17e61bf219msh19222af8c1a0480p1a9e7fjsn5a4297b5b87a';
 
   const reqWithHeader = req.clone({
     headers: req.headers.set('X-RapidAPI-Key', key),
