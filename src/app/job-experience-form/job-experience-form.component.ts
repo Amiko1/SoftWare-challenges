@@ -33,4 +33,33 @@ export class JobExperienceFormComponent {
     const jobForm = this.fb.group(controls);
     this.jobs.push(jobForm);
   }
+
+  removeJob(index: number) {
+    this.jobs.removeAt(index);
+  }
+
+  getPositions(jobIndex: number): FormArray {
+    return this.jobs.at(jobIndex).get('positions') as FormArray;
+  }
+
+  addPosition(jobIndex: number) {
+    const PositionControl = {
+      name: ['', Validators.required],
+      level: ['', Validators.required],
+      description: ['', Validators.required],
+      startDate: ['', Validators.required],
+      endDate: ['', Validators.required],
+    };
+    const positionForm = this.fb.group(PositionControl);
+
+    this.getPositions(jobIndex).push(positionForm);
+  }
+
+  removePosition(jobIndex: number, positionIndex: number) {
+    this.getPositions(jobIndex).removAt(positionIndex);
+  }
+
+  onSubmit() {
+    console.log(this.jobExperienceForm.value);
+  }
 }

@@ -1,6 +1,7 @@
 <div>
   <div class="actions">
     <button mat-button type="button" (click)="addJob()">Add Job</button>
+    <button mat-button type="submit">Submit</button>
   </div>
   <section class="container">
     <form [formGroup]="jobExperienceForm" (ngSubmit)="onSubmit()">
@@ -27,6 +28,60 @@
                   formControlName="companyDescription"
                 ></textarea>
               </mat-form-field>
+            </div>
+            <div formArrayName="positions">
+              <div
+                *ngFor="let position of getPositions(i).controls; let j = index"
+                [formGroupName]="j"
+              >
+                <button mat-button type="button" (click)="removePosition(i, j)">
+                  Remove Position
+                </button>
+                <div class="position-fields">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Position Name</mat-label>
+                    <input matInput formControlName="name" />
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Position Level</mat-label>
+                    <mat-select formControlName="level">
+                      <mat-option value="Junior">Junior</mat-option>
+                      <mat-option value="Middle">Middle</mat-option>
+                      <mat-option value="Senior">Senior</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Position Description</mat-label>
+                    <textarea matInput formControlName="description"></textarea>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>Start Date</mat-label>
+                    <input
+                      matInput
+                      [matDatepicker]="picker1"
+                      formControlName="startDate"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker1"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>
+                  <mat-form-field appearance="outline">
+                    <mat-label>End Date</mat-label>
+                    <input
+                      matInput
+                      [matDatepicker]="picker2"
+                      formControlName="endDate"
+                    />
+                    <mat-datepicker-toggle
+                      matSuffix
+                      [for]="picker2"
+                    ></mat-datepicker-toggle>
+                    <mat-datepicker #picker2></mat-datepicker>
+                  </mat-form-field>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -17,3 +17,10 @@
 .actions {
   position: fixed;
 }
+
+.position-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 36px;
+}
