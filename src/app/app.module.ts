@@ -12,10 +12,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
 import { FilmsPresentationComponent } from './films-presentation/films-presentation.component';
-import { provideHttpClient } from '@angular/common/http';
+import {
+  HttpHeaders,
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
+import { configInterceptor } from './core/http/Interceptors/config-interceptor';
+import { FilmPresentationService } from './services/film-presentation.service';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
+  { path: 'film-presentation', component: FilmsPresentationComponent },
 ];
 
 @NgModule({
@@ -35,7 +42,10 @@ const routes: Routes = [
     MatNativeDateModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [provideHttpClient()],
+  providers: [
+    provideHttpClient(withInterceptors([configInterceptor])),
+    FilmPresentationService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
