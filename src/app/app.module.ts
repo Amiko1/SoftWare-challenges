@@ -10,6 +10,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { FormsModule } from '@angular/forms'; // Import FormsModule
+import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
@@ -21,10 +22,13 @@ import {
 } from '@angular/common/http';
 import { configInterceptor } from './core/http/Interceptors/config-interceptor';
 import { FilmPresentationService } from './services/film-presentation.service';
+import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { CustomDatePipe } from './core/pipes/custom-date.pipe';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
   { path: 'film-presentation', component: FilmsPresentationComponent },
+  { path: 'custom-pipe', component: CustomPipeComponent },
 ];
 
 @NgModule({
@@ -32,6 +36,8 @@ const routes: Routes = [
     AppComponent,
     JobExperienceFormComponent,
     FilmsPresentationComponent,
+    CustomPipeComponent,
+    CustomDatePipe,
   ],
   imports: [
     BrowserModule,
@@ -49,6 +55,7 @@ const routes: Routes = [
   providers: [
     provideHttpClient(withInterceptors([configInterceptor])),
     FilmPresentationService,
+    DatePipe,
   ],
   bootstrap: [AppComponent],
 })
