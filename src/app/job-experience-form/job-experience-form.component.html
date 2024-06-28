@@ -1,7 +1,7 @@
 <div>
   <div class="actions">
     <button mat-button type="button" (click)="addJob()">Add Job</button>
-    <button mat-button type="submit">Submit</button>
+    <button mat-button type="submit" (click)="onSubmit()">Submit</button>
   </div>
   <section class="container">
     <form [formGroup]="jobExperienceForm" (ngSubmit)="onSubmit()">
