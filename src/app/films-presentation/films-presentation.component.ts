@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FilmPresentationService } from '../services/film-presentation.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-films-presentation',
@@ -7,14 +8,11 @@ import { FilmPresentationService } from '../services/film-presentation.service';
   styleUrl: './films-presentation.component.css',
 })
 export class FilmsPresentationComponent {
-  films: unknown = [];
+  films$!: Observable<unknown>;
 
   constructor(private filmPresentationService: FilmPresentationService) {}
 
   ngOnInit(): void {
-    this.filmPresentationService.getFilms('10').subscribe((data) => {
-      this.films = data;
-      console.log(data);
-    });
+    this.films$ = this.filmPresentationService.getFilms();
   }
 }

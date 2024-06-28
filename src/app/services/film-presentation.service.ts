@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class FilmPresentationService {
   constructor(private httpClient: HttpClient) {}
 
-  getFilms(id: string): Observable<unknown> {
+  getFilms(): Observable<unknown> {
     const url = `https://online-movie-
 database.p.rapidapi.com/title/v2/find?title=starwars&amp;limit=20&amp;paginationKey=0&amp;sortArg=
 moviemeter%2Casc`;
