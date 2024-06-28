@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
 import { RouterModule, Routes } from '@angular/router';
+
+import { AppComponent } from './app.component';
+import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
@@ -13,8 +13,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [AppComponent, JobExperienceFormComponent],
-  imports: [BrowserModule, AppRoutingModule, RouterModule.forRoot(routes)],
-  providers: [provideAnimationsAsync()],
+  imports: [BrowserModule, ReactiveFormsModule, RouterModule.forRoot(routes)],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
