@@ -56,7 +56,7 @@ export class JobExperienceFormComponent {
   }
 
   removePosition(jobIndex: number, positionIndex: number) {
-    this.getPositions(jobIndex).removAt(positionIndex);
+    this.getPositions(jobIndex).removeAt(positionIndex);
   }
 
   onSubmit() {
