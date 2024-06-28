@@ -1,1 +1,36 @@
-<p>job-experience-form works!</p>
+<div>
+  <div class="actions">
+    <button mat-button type="button" (click)="addJob()">Add Job</button>
+  </div>
+  <section class="container">
+    <form [formGroup]="jobExperienceForm" (ngSubmit)="onSubmit()">
+      <div formArrayName="jobs">
+        <div
+          *ngFor="let job of jobs.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <div class="margin-top">
+            <h2>Job #{{ i + 1 }}</h2>
+            <div class="company-fields">
+              <mat-form-field appearance="outline">
+                <mat-label>Company Name</mat-label>
+                <input matInput formControlName="companyName" />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Company Website</mat-label>
+                <input matInput formControlName="companyWebsite" />
+              </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Company Description</mat-label>
+                <textarea
+                  matInput
+                  formControlName="companyDescription"
+                ></textarea>
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
