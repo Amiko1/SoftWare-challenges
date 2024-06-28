@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { urlValidator } from '../core/forms/validators/url-validator';
 
 @Component({
   selector: 'app-job-experience-form',
@@ -22,10 +23,7 @@ export class JobExperienceFormComponent {
   addJob() {
     const controls = {
       companyName: ['', Validators.required],
-      companyWebsite: [
-        '',
-        [Validators.required, Validators.pattern('https?://.+')],
-      ],
+      companyWebsite: ['', [Validators.required, urlValidator]],
       companyDescription: ['', Validators.required],
       positions: this.fb.array([]),
     };
@@ -60,6 +58,10 @@ export class JobExperienceFormComponent {
   }
 
   onSubmit() {
-    console.log(this.jobExperienceForm.value);
+    if (!this.jobExperienceForm.invalid) {
+      console.log(this.jobExperienceForm.value);
+    } else {
+      console.error('Form Is not valid');
+    }
   }
 }
