@@ -6,9 +6,6 @@
   align-items: center;
 }
 
-.calendar {
-}
-
 .months,
 .week-days {
   justify-content: center;
@@ -20,4 +17,8 @@
 
 .months {
   margin-top: 24px;
+}
+
+.mark {
+  color: blue;
 }

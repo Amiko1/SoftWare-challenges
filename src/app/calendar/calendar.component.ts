@@ -36,8 +36,8 @@ export class CalendarComponent {
   ];
 
   getDatesInMonth(year: number, month: number): Date[] {
-    const startDate = new Date(year, month, 1); // Start from the 1st day of the month
-    const endDate = new Date(year, month + 1, 0); // End on the last day of the month
+    const startDate = new Date(year, month, 1);
+    const endDate = new Date(year, month + 1, 0);
 
     const dates = [];
     for (
@@ -45,8 +45,18 @@ export class CalendarComponent {
       date <= endDate;
       date.setDate(date.getDate() + 1)
     ) {
-      dates.push(new Date(date)); // Push a new date object to avoid mutating the original date
+      dates.push(new Date(date));
     }
     return dates;
+  }
+
+  checkHoliday(dayNum: number) {
+    const day = this.weekdays[dayNum];
+
+    if (this.holidays.includes(day)) {
+      return 'mark';
+    }
+
+    return '';
   }
 }
