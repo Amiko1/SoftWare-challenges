@@ -1,0 +1,23 @@
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+}
+
+.months,
+.week-days {
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(7, 90px);
+}
+
+.months {
+  margin-top: 24px;
+}

@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="div">
+    <div class="week-days">
+      <div *ngFor="let weekday of weekdays">
+        <p style="text-align: center">{{ weekday }}</p>
+      </div>
+    </div>
+    <div class="months">
+      <div
+        *ngFor="
+          let date of getDatesInMonth(date.getFullYear(), date.getMonth());
+          let isFirst = first
+        "
+      >
+        <p style="text-align: center">
+          {{ date.getDate() }}
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
