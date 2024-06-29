@@ -50,10 +50,14 @@ export class CalendarComponent {
     return dates;
   }
 
-  checkHoliday(dayNum: number) {
-    const day = this.weekdays[dayNum];
+  markDates(day: number, date: number) {
+    const currentDay = this.weekdays[day];
 
-    if (this.holidays.includes(day)) {
+    if (this.holidays.includes(currentDay)) {
+      return 'mark';
+    }
+
+    if (this.date.getDate() === date) {
       return 'mark';
     }
 
