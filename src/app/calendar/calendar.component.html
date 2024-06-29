@@ -11,6 +11,7 @@
           let date of getDatesInMonth(date.getFullYear(), date.getMonth());
           let isFirst = first
         "
+        [ngStyle]="isFirst ? { 'grid-column-start': date.getDay() + 1 } : null"
       >
         <p style="text-align: center">
           {{ date.getDate() }}
