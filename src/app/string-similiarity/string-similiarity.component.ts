@@ -8,10 +8,5 @@ import { levenshteinDistance } from '../utils/levenshteinDistance';
 })
 export class StringSimiliarityComponent {
   value = 'ქონება';
-  values = [
-    'ქონება',
-    'ქონების გადასახადი',
-    'ქონების გასხვისება',
-    'საქონლის გასხვისება',
-  ];
+  values = ['ქონება', 'ქონების გადასახადი', 'ქორწილი', 'საქონლის გასხვისება'];
 }

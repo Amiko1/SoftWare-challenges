@@ -11,7 +11,7 @@ export class CalculateEqualityComponent {
   @Input() values!: string[];
 
   getSimilarityPercentage(str1: string, str2: string) {
-    const distance = levenshteinDistance(str1, str2, str1.length, str2.length);
+    const distance = levenshteinDistance(str1, str2);
     const maxLength = Math.max(str1.length, str2.length);
     const similarity = ((maxLength - distance) / maxLength) * 100;
     return similarity.toFixed(2);

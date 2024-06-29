@@ -1,1 +1,10 @@
-<p>calculate-equality works!</p>
+<div class="container">
+  <div *ngFor="let secondValue of values">
+    <div class="margin-top">
+      <p>
+        {{ value }} - {{ secondValue }} =
+        {{ getSimilarityPercentage(value, secondValue) }}
+      </p>
+    </div>
+  </div>
+</div>
