@@ -5,10 +5,6 @@
   align-items: center;
 }
 
-.margin-top {
-  margin-top: 32px;
-}
-
 .company-fields {
   display: flex;
   gap: 10px;

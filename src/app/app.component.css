@@ -4,3 +4,11 @@
 
   height: 100vh;
 }
+
+.flex {
+  display: flex;
+}
+
+.margin-top {
+  margin-top: 32px;
+}
