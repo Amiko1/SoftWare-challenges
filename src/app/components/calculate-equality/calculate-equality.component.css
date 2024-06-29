@@ -9,3 +9,9 @@
 .margin-top {
   margin-top: 32px;
 }
+
+.custom-fields {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}

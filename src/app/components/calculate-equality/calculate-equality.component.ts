@@ -10,10 +10,17 @@ export class CalculateEqualityComponent {
   @Input() value!: string;
   @Input() values!: string[];
 
+  customValue1 = '';
+  customValue2 = '';
+
   getSimilarityPercentage(str1: string, str2: string) {
     const distance = levenshteinDistance(str1, str2);
     const maxLength = Math.max(str1.length, str2.length);
     const similarity = ((maxLength - distance) / maxLength) * 100;
+
+    if (isNaN(similarity)) {
+      return '';
+    }
     return similarity.toFixed(2);
   }
 }

@@ -7,4 +7,17 @@
       </p>
     </div>
   </div>
+
+  <div class="custom-fields margin-top">
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <input [(ngModel)]="customValue1" matInput />
+    </mat-form-field>
+    <p>-</p>
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <input [(ngModel)]="customValue2" matInput />
+    </mat-form-field>
+    <p>= {{ getSimilarityPercentage(customValue1, customValue2) }} %</p>
+  </div>
 </div>
