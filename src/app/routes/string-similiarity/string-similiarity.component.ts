@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { levenshteinDistance } from '../utils/levenshteinDistance';
+import { levenshteinDistance } from '../../utils/levenshteinDistance';
 
 @Component({
   selector: 'app-string-similiarity',

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
-import { urlValidator } from '../core/forms/validators/url-validator';
+import { urlValidator } from '../../core/forms/validators/url-validator';
 
 @Component({
   selector: 'app-job-experience-form',

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FilmPresentationService } from '../services/film-presentation.service';
+import { FilmPresentationService } from '../../services/film-presentation.service';
 import { Observable } from 'rxjs';
-import { Film } from '../@types/film-types';
+import { Film } from '../../@types/film-types';
 
 @Component({
   selector: 'app-films-presentation',

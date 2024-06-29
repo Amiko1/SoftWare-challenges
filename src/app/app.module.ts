@@ -13,8 +13,8 @@ import { FormsModule } from '@angular/forms'; // Import FormsModule
 import { DatePipe } from '@angular/common';
 
 import { AppComponent } from './app.component';
-import { JobExperienceFormComponent } from './job-experience-form/job-experience-form.component';
-import { FilmsPresentationComponent } from './films-presentation/films-presentation.component';
+import { JobExperienceFormComponent } from './routes/job-experience-form/job-experience-form.component';
+import { FilmsPresentationComponent } from './routes/films-presentation/films-presentation.component';
 import {
   HttpHeaders,
   provideHttpClient,
@@ -22,11 +22,11 @@ import {
 } from '@angular/common/http';
 import { configInterceptor } from './core/http/Interceptors/config-interceptor';
 import { FilmPresentationService } from './services/film-presentation.service';
-import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
+import { CustomPipeComponent } from './routes/custom-pipe/custom-pipe.component';
 import { CustomDatePipe } from './core/pipes/custom-date.pipe';
-import { StringSimiliarityComponent } from './string-similiarity/string-similiarity.component';
+import { StringSimiliarityComponent } from './routes/string-similiarity/string-similiarity.component';
 import { CalculateEqualityComponent } from './components/calculate-equality/calculate-equality.component';
-import { CalendarComponent } from './calendar/calendar.component';
+import { CalendarComponent } from './routes/calendar/calendar.component';
 import { NavigationComponent } from './components/layout/navigation/navigation.component';
 
 const routes: Routes = [
