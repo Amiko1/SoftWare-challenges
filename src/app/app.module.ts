@@ -24,11 +24,14 @@ import { configInterceptor } from './core/http/Interceptors/config-interceptor';
 import { FilmPresentationService } from './services/film-presentation.service';
 import { CustomPipeComponent } from './custom-pipe/custom-pipe.component';
 import { CustomDatePipe } from './core/pipes/custom-date.pipe';
+import { StringSimiliarityComponent } from './string-similiarity/string-similiarity.component';
+import { CalculateEqualityComponent } from './components/calculate-equality/calculate-equality.component';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
   { path: 'film-presentation', component: FilmsPresentationComponent },
   { path: 'custom-pipe', component: CustomPipeComponent },
+  { path: 'string-similiarity', component: StringSimiliarityComponent },
 ];
 
 @NgModule({
@@ -38,6 +41,8 @@ const routes: Routes = [
     FilmsPresentationComponent,
     CustomPipeComponent,
     CustomDatePipe,
+    StringSimiliarityComponent,
+    CalculateEqualityComponent,
   ],
   imports: [
     BrowserModule,
