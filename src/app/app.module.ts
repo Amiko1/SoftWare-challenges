@@ -27,6 +27,7 @@ import { CustomDatePipe } from './core/pipes/custom-date.pipe';
 import { StringSimiliarityComponent } from './string-similiarity/string-similiarity.component';
 import { CalculateEqualityComponent } from './components/calculate-equality/calculate-equality.component';
 import { CalendarComponent } from './calendar/calendar.component';
+import { NavigationComponent } from './components/layout/navigation/navigation.component';
 
 const routes: Routes = [
   { path: 'job-experience', component: JobExperienceFormComponent },
@@ -46,6 +47,7 @@ const routes: Routes = [
     StringSimiliarityComponent,
     CalculateEqualityComponent,
     CalendarComponent,
+    NavigationComponent,
   ],
   imports: [
     BrowserModule,
